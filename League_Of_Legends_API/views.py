@@ -25,4 +25,4 @@ def home(request):
 
 
 def results(request):
-    return HttpResponse('<h1>League Results</h1>')
+    return render(request, 'League_Of_Legends_API/results.html')
