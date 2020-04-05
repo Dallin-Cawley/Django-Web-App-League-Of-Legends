@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>League of Legends API</title>
-</head>
-<body>
-        <h1>League of Legends API</h1>
-
+{% extends 'League_Of_Legends_API/search_bar.html' %}
+{% block content %}
         {% for summoner in player %}
             <h2> {{ summoner.summoner_name }}</h2>
             <p>  {{ summoner.summoner_level }}</p>
             <p>  {{ summoner.summoner_icon_id }}</p>
             <p>  {{ summoner.games_won }}</p>
         {% endfor %}
-</body>
-</html>
+{% endblock content %}
