@@ -1,9 +1,5 @@
 {% extends 'League_Of_Legends_API/search_bar.html' %}
 {% block content %}
-        {% for summoner in player %}
-            <h2> {{ summoner.summoner_name }}</h2>
-            <p>  {{ summoner.summoner_level }}</p>
-            <p>  {{ summoner.summoner_icon_id }}</p>
-            <p>  {{ summoner.games_won }}</p>
-        {% endfor %}
+    <h1>  {{ url.name }}  </h1>
+    <h2>  {{ url.summonerLevel }} </h2>
 {% endblock content %}
