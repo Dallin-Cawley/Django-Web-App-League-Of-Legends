@@ -6,5 +6,12 @@
 </head>
 <body>
         <h1>League of Legends API</h1>
+
+        {% for summoner in player %}
+            <h2> {{ summoner.summoner_name }}</h2>
+            <p>  {{ summoner.summoner_level }}</p>
+            <p>  {{ summoner.summoner_icon_id }}</p>
+            <p>  {{ summoner.games_won }}</p>
+        {% endfor %}
 </body>
 </html>
