@@ -10,5 +10,9 @@ def riot_API_summoner_info(name):
     return from_json(riot_api_summoner_GET.content)
 
 
+def get_profile_icon_url(icon_id):
+    return 'http://ddragon.leagueoflegends.com/cdn/10.7.1/img/profileicon/' + str(icon_id) + '.png'
+
+
 def from_json(json_string):
     return json.loads(json_string)
