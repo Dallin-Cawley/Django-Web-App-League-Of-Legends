@@ -1,7 +1,14 @@
 .image-align-left {
     float: left;
+    vertical-align: top;
 }
 
-.text-valign-tp {
+.p-summoner-name {
     vertical-align: top;
+    float: right;
+}
+
+.p-summoner-level {
+    vertical-align: top;
+    float: right;
 }

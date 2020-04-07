@@ -1,12 +1,9 @@
 {% extends 'League_Of_Legends_API/search_bar.html' %}
-{% block content %}
-    <div>
-        <p>
-            <img class="image-align-left" src="{{ icon_url }}" alt="profile_icon" width="200" height="200"/>
-            <span class="text-valign-tp"> {{ summoner.name }} </span>
-            <br>
-            <span class="text-valign-tp">  {{ summoner.summonerLevel }} </span>
-        </p>
 
+{% block content %}
+    <img class="image-align-left" src="{{ icon_url }}" alt="profile_icon" width="200" height="200"/>
+    <div>
+        <p class="p-summoner-name"> {{ summoner.name }} </p>
+        <p class="p-summoner-level"> {{ summoner.summonerLevel }} </p>
     </div>
 {% endblock content %}

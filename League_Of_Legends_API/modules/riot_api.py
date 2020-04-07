@@ -4,7 +4,7 @@ import json
 
 def riot_API_summoner_info(name):
     url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + name
-    args = {'api_key': 'RGAPI-72e44e7e-5527-4b1a-89f6-7d011b02dff6'}
+    args = {'api_key': 'RGAPI-b456c718-cd63-468a-8206-5ad4e8faa6d3'}
     riot_api_summoner_GET = requests.get(url, params=args)
 
     return from_json(riot_api_summoner_GET.content)
