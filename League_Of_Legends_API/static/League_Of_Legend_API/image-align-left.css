@@ -1,14 +1,16 @@
-.image-align-left {
-    float: left;
-    vertical-align: top;
+#summoner {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    margin-left: 20%;
+    margin-top: 3%;
+
+    /* Container border */
+    border: 3px solid black;
 }
 
-.p-summoner-name {
-    vertical-align: top;
-    float: right;
-}
-
-.p-summoner-level {
-    vertical-align: top;
-    float: right;
+#name-level {
+    margin-top: 15%;
+    margin-left: 10px;
+    align-content: center;
 }
