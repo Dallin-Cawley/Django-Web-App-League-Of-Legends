@@ -1,4 +1,21 @@
 {% extends 'League_Of_Legends_API/search_bar.html' %}
+{% load static %}
+
+{% block self-css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'League_Of_Legend_API/display-results.css' %}" />
+{% endblock %}
+
 {% block content %}
-    <h1>League API Results</h1>
+
+    <div id="basic-summoner-info">
+        <img class="image-align-left" src="{{ icon_url }}" alt="profile_icon" width="200" height="200"/>
+        <div id="name-level">
+            <p> {{ summoner.name }} </p>
+            <p> {{ summoner.summonerLevel }} </p>
+        </div>
+    </div>
+
+    <div id="live_game_data">
+
+    </div>
 {% endblock content %}
