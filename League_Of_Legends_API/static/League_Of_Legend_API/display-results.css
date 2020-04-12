@@ -9,8 +9,25 @@
     border: 3px solid black;
 }
 
-#name-level {
+
+.div-text-next-to-image {
     margin-top: 15%;
     margin-left: 10px;
     align-content: center;
+}
+
+#live_game_data {
+    display: flex;
+    margin-top: 100px;
+
+    /* Container border */
+    border: 3px solid black;
+}
+
+#team1 {
+    margin-left: 15%;
+}
+
+#team2 {
+    margin-left: 45%;
 }

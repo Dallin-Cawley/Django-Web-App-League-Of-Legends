@@ -3,5 +3,8 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/League_Of_Legends_API/static/League_Of_Legend_API/search_bar.css" />
+  </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (League-Of-Legends-Web-App)" project-jdk-type="Python SDK" />
 </project>

@@ -1,4 +1,14 @@
-body {
-    background-image: linear-gradient(to bottom, blue, white);
-    background-repeat: no-repeat;
+form.center-lg {
+    position: absolute;
+    right: 20%;
+    width: 50%;
 }
+
+input.large {
+    width: 70% !important;
+}
+
+#whole_website {
+    background-color: #99badd;
+}
+
