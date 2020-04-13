@@ -27,8 +27,11 @@ def get_champion_url(participants):
     i = 0
     base_url = 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/'
 
+    champion_file = open('League_Of_Legends_API/id_champion.txt', 'r')
+    champion_dict = json.loads(champion_file.read())
+
     for participant in participants:
-        url = base_url + get_champion_name_from_id(participant.get('championId')) + '_0.jpg'
+        url = base_url + champion_dict.get(str(participant.get('championId'))) + '_0.jpg'
         champion_url_list.update({i: url})
         i += 1
 
