@@ -22,12 +22,13 @@ def results(request):
             print("form is valid")
             summoner_name = summoner_name_form.cleaned_data['summoner_name']
             summoner_info = riot_API_summoner_info(summoner_name)
-            summoner_live_game_info = riot_API_live_game(summoner_info.get('id'))
+            summoner_live_game_info = riot_API_live_game(summoner_info.get('id')).get('participants')
 
             summoners = {
                 'summoner': summoner_info,
                 'icon_url': get_profile_icon_url(summoner_info.get('profileIconId')),
-                'champions': get_champion_url(summoner_live_game_info.get('participants'))
+                'champions': get_champion_url(summoner_live_game_info),
+                'live_game': summoner_live_game_info
             }
             return render(request, 'League_Of_Legends_API/results.html', summoners)
         else:

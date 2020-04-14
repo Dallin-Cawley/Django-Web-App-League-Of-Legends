@@ -25,8 +25,8 @@
                 <img class="image-align-left" src="{{ champions.0 }}" alt="team1-top-champ" width="250" height="400"/>
 
                 <div id="team1-top-name-level" class="div-text-next-to-image">
-                    <p>Team1 top name</p>
-                    <p>Team1 top level</p>
+                    <p>{{ live_game.0.summonerName }}</p>
+                    <p>{{ live_game.0.level}}</p>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
                 <img class="image-align-left" src="{{ champions.1 }}" alt="team1-mid-champ" width="250" height="400"/>
 
                 <div id="team1-mid-name-level" class="div-text-next-to-image">
-                    <p>Team1 mid name</p>
+                    <p>{{ live_game.1.summonerName }}</p>
                     <p>Team1 mid level</p>
                 </div>
             </div>
@@ -74,10 +74,10 @@
                 <div id="team2-top-name-level" class="div-text-next-to-image">
                     <p>Team2 top name</p>
                     <p>Team2 top level</p>
-
-                    <img class="image-align-left" src="{{ champions.5 }}" alt="team2-top-champ" width="250" height="400"/>
-
                 </div>
+
+                <img class="image-align-left" src="{{ champions.5 }}" alt="team2-top-champ" width="250" height="400"/>
+
             </div>
 
             <div id="team2-mid">
