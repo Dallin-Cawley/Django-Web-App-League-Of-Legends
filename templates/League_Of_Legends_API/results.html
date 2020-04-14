@@ -10,12 +10,13 @@
     <!-- Begin section where the searched summoner's info is shown -->
     <div id="basic-summoner-info">
         <img class="image-align-left" src="{{ icon_url }}" alt="profile_icon" width="200" height="200"/>
-        <div id="name-level" class="div-text-next-to-image">
+        <div id="name-level" class="div-text-next-to-image-right">
             <p> {{ summoner.name }} </p>
-            <p> {{ summoner.summonerLevel }} </p>
+            <p> Level: {{ summoner.summonerLevel }} </p>
         </div>
     </div>
 
+    {% if summoner.is_in_game %}
     <!-- Begin section where Live Game Data is Shown -->
     <div id="live_game_data">
 
@@ -24,7 +25,7 @@
             <div id="team1-top">
                 <img class="image-align-left" src="{{ champions.0 }}" alt="team1-top-champ" width="250" height="400"/>
 
-                <div id="team1-top-name-level" class="div-text-next-to-image">
+                <div id="team1-top-name-level" class="div-text-next-to-image-right">
                     <p>{{ live_game.0.summonerName }}</p>
                     <p>{{ live_game.0.level}}</p>
                 </div>
@@ -33,7 +34,7 @@
             <div id="team1-mid">
                 <img class="image-align-left" src="{{ champions.1 }}" alt="team1-mid-champ" width="250" height="400"/>
 
-                <div id="team1-mid-name-level" class="div-text-next-to-image">
+                <div id="team1-mid-name-level" class="div-text-next-to-image-right">
                     <p>{{ live_game.1.summonerName }}</p>
                     <p>Team1 mid level</p>
                 </div>
@@ -42,8 +43,8 @@
             <div id="team1-jungle">
                 <img class="image-align-left" src="{{ champions.2 }}" alt="team1-jungle-champ" width="250" height="400"/>
 
-                <div id="team1-jungle-name-level" class="div-text-next-to-image">
-                    <p>Team1 jungle name</p>
+                <div id="team1-jungle-name-level" class="div-text-next-to-image-right">
+                    <p>{{ live_game.2.summonerName }}</p>
                     <p>Team1 jungle level</p>
                 </div>
             </div>
@@ -51,8 +52,8 @@
             <div id="team1-adc">
                 <img class="image-align-left" src="{{ champions.3 }}" alt="team1-adc-champ" width="250" height="400"/>
 
-                <div id="team1-adc-name-level" class="div-text-next-to-image">
-                    <p>Team1 adc name</p>
+                <div id="team1-adc-name-level" class="div-text-next-to-image-right">
+                    <p>{{ live_game.3.summonerName }}</p>
                     <p>Team1 adc level</p>
                 </div>
             </div>
@@ -60,8 +61,8 @@
             <div id="team1-support">
                 <img class="image-align-left" src="{{ champions.4 }}" alt="team1-support-champ" width="250" height="400"/>
 
-                <div id="team1-support-name-level" class="div-text-next-to-image">
-                    <p>Team1 support name</p>
+                <div id="team1-support-name-level" class="div-text-next-to-image-right">
+                    <p>{{ live_game.4.summonerName }}</p>
                     <p>Team1 support level</p>
                 </div>
             </div>
@@ -71,8 +72,8 @@
         <div id="team2">
             <div id="team2-top">
 
-                <div id="team2-top-name-level" class="div-text-next-to-image">
-                    <p>Team2 top name</p>
+                <div id="team2-top-name-level" class="div-text-next-to-image-left">
+                    <p>{{ live_game.5.summonerName }}</p>
                     <p>Team2 top level</p>
                 </div>
 
@@ -81,8 +82,8 @@
             </div>
 
             <div id="team2-mid">
-                <div id="team2-mid-name-level" class="div-text-next-to-image">
-                    <p>Team2 mid name</p>
+                <div id="team2-mid-name-level" class="div-text-next-to-image-left">
+                    <p>{{ live_game.6.summonerName }}</p>
                     <p>Team2 mid level</p>
                 </div>
 
@@ -90,8 +91,8 @@
             </div>
 
             <div id="team2-jungle">
-                <div id="team2-jungle-name-level" class="div-text-next-to-image">
-                    <p>Team2 jungle name</p>
+                <div id="team2-jungle-name-level" class="div-text-next-to-image-left">
+                    <p>{{ live_game.7.summonerName }}</p>
                     <p>Team2 jungle level</p>
                 </div>
 
@@ -99,8 +100,8 @@
             </div>
 
             <div id="team2-adc">
-                <div id="team2-adc-name-level" class="div-text-next-to-image">
-                    <p>Team2 adc name</p>
+                <div id="team2-adc-name-level" class="div-text-next-to-image-left">
+                    <p>{{ live_game.8.summonerName }}</p>
                     <p>Team2 adc level</p>
                 </div>
 
@@ -108,8 +109,8 @@
             </div>
 
             <div id="team2-support">
-                <div id="team1-support-name-level" class="div-text-next-to-image">
-                    <p>Team2 support name</p>
+                <div id="team1-support-name-level" class="div-text-next-to-image-left">
+                    <p>{{ live_game.9.summonerName }}</p>
                     <p>Team2 support level</p>
                 </div>
 
@@ -117,4 +118,9 @@
             </div>
         </div>
     </div>
+    {% else %}
+        <div>
+            <h1>Summoner is not in game</h1>
+        </div>
+    {% endif %}
 {% endblock content %}

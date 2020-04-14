@@ -15,7 +15,17 @@ def riot_API_live_game(summoner_id):
     args = {'api_key': 'RGAPI-d4965f87-1b14-418c-b4b7-a7fa5efdee95'}
     riot_api_live_game_GET = requests.get(url, params=args)
 
-    return json.loads(riot_api_live_game_GET.content)
+    if riot_API_isInGame(riot_api_live_game_GET):
+        return json.loads(riot_api_live_game_GET.content)
+    else:
+        return False
+
+
+def riot_API_isInGame(request):
+    if request.status_code == 200:
+        return True
+    else:
+        return False
 
 
 def get_profile_icon_url(icon_id):

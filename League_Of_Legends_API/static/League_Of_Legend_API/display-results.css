@@ -4,15 +4,18 @@
     width: 25%;
     margin-left: 20%;
     margin-top: 3%;
-
-    /* Container border */
-    border: 3px solid black;
 }
 
 
-.div-text-next-to-image {
+.div-text-next-to-image-right {
     margin-top: 15%;
     margin-left: 10px;
+    align-content: center;
+}
+
+.div-text-next-to-image-left {
+    margin-top: 15%;
+    margin-right: 10px;
     align-content: center;
 }
 
@@ -20,9 +23,6 @@
     display: grid;
     grid-template-columns: auto auto;
     margin-top: 100px;
-
-    /* Container border */
-    border: 3px solid black;
 }
 
 #team1-top {
@@ -35,24 +35,28 @@
     display: grid;
     grid-template-columns: 250px auto;
     margin-left: 15%;
+    margin-top: 25px;
 }
 
 #team1-jungle {
     display: grid;
     grid-template-columns: 250px auto;
     margin-left: 15%;
+    margin-top: 25px;
 }
 
 #team1-support {
     display: grid;
     grid-template-columns: 250px auto;
     margin-left: 15%;
+    margin-top: 25px;
 }
 
 #team1-adc {
     display: grid;
     grid-template-columns: 250px auto;
     margin-left: 15%;
+    margin-top: 25px;
 }
 
 #team2-top {
@@ -67,6 +71,7 @@
     grid-template-columns: auto 250px;
     margin-right: 15%;
     text-align: right;
+    margin-top: 25px;
 }
 
 #team2-jungle {
@@ -74,6 +79,7 @@
     grid-template-columns: auto 250px;
     margin-right: 15%;
     text-align: right;
+    margin-top: 25px;
 }
 
 #team2-support {
@@ -81,6 +87,7 @@
     grid-template-columns: auto 250px;
     margin-right: 15%;
     text-align: right;
+    margin-top: 25px;
 }
 
 #team2-adc {
@@ -88,4 +95,5 @@
     grid-template-columns: auto 250px;
     margin-right: 15%;
     text-align: right;
+    margin-top: 25px;
 }
