@@ -17,17 +17,70 @@
 }
 
 #live_game_data {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
     margin-top: 100px;
 
     /* Container border */
     border: 3px solid black;
 }
 
-#team1 {
+#team1-top {
+    display: grid;
+    grid-template-columns: auto auto;
     margin-left: 15%;
 }
 
-#team2 {
+#team1-mid {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 15%;
+}
+
+#team1-jungle {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 15%;
+}
+
+#team1-support {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 15%;
+}
+
+#team1-adc {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 15%;
+}
+
+#team2-top {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 45%;
+}
+
+#team2-mid {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 45%;
+}
+
+#team2-jungle {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 45%;
+}
+
+#team2-support {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 45%;
+}
+
+#team2-adc {
+    display: grid;
+    grid-template-columns: auto auto;
     margin-left: 45%;
 }
