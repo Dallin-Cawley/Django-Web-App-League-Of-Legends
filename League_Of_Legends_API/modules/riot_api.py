@@ -18,7 +18,70 @@ def riot_API_live_game(summoner_id):
     if riot_API_isInGame(riot_api_live_game_GET):
         return json.loads(riot_api_live_game_GET.content)
     else:
-        return False
+        return "Not In Game"
+
+
+def riot_API_ranked_info(summoner_id):
+    url = 'https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/' + str(summoner_id)
+    args = {'api_key': 'RGAPI-d4965f87-1b14-418c-b4b7-a7fa5efdee95'}
+    riot_api_ranked_info_GET = requests.get(url, params=args)
+
+    return format_ranked_info(json.loads(riot_api_ranked_info_GET.content))
+
+
+def format_ranked_info(ranked_info):
+    queue_types = {}
+
+    for rank in ranked_info:
+
+        if rank.get('queueType') == 'RANKED_FLEX_SR':
+            queue_types.update({'is_flex_rank': True})
+            queue_types.update({'flex_tier': format_tier_name(rank.get('tier'))})
+            queue_types.update({'flex_rank': rank.get('rank')})
+
+        elif rank.get('queueType') == 'RANKED_SOLO_5x5':
+            queue_types.update({'is_solo_rank': True})
+            queue_types.update({'solo_tier': format_tier_name(rank.get('tier'))})
+            queue_types.update({'solo_rank': rank.get('rank')})
+        else:
+            queue_types.update({'is_solo_rank': False})
+            queue_types.update({'is_flex_rank': False})
+
+    return queue_types
+
+
+def format_tier_name(tier):
+    switch = {
+        'IRON': 'Iron',
+        'BRONZE': 'Bronze',
+        'SILVER': 'Silver',
+        'GOLD': 'Gold',
+        'PLATINUM': 'Platinum',
+        'DIAMOND': 'Diamond',
+        'MASTER': 'Master',
+        'CHALLENGER': 'Challenger'
+    }
+
+    return switch.get(tier, 'Not Ranked')
+
+
+def get_emblem_url(queue_types):
+    base_url = '/images/Emblem_'
+    ranked_emblem_urls = {}
+
+    if queue_types.get('is_flex_rank'):
+        full_url = base_url + queue_types.get('flex_tier') + '.png'
+        ranked_emblem_urls.update({'flex': full_url})
+    else:
+        ranked_emblem_urls.update({'flex': ''})
+
+    if queue_types.get('is_solo_rank'):
+        full_url = base_url + queue_types.get('solo_tier') + '.png'
+        ranked_emblem_urls.update({'solo': full_url})
+    else:
+        ranked_emblem_urls.update({'solo': ''})
+
+    return ranked_emblem_urls
 
 
 def riot_API_isInGame(request):

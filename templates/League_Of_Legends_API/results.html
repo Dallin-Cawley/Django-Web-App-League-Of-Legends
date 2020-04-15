@@ -3,6 +3,7 @@
 
 {% block self-css %}
     <link rel="stylesheet" type="text/css" href="{% static 'League_Of_Legend_API/display-results.css' %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
 {% endblock %}
 
 {% block content %}
@@ -14,9 +15,26 @@
             <p> {{ summoner.name }} </p>
             <p> Level: {{ summoner.summonerLevel }} </p>
         </div>
+
+        {% if ranked_info.is_flex_rank %}
+            <div class="div-rank-emblem">
+                <p>Ranked Flex</p>
+                <img src="{% static ranked_tier_url.flex %}" alt="flex_rank" width="150" height="150"/>
+                <p>{{ ranked_info.flex_tier }} : {{ ranked_info.flex_rank }}</p>
+            </div>
+        {% endif %}
+
+        {% if ranked_info.is_solo_rank %}
+            <div class="div-rank-emblem">
+                <p>Solo 5x5</p>
+                <img src="{% static ranked_tier_url.solo %}" alt="solo_rank" width="150" height="150"/>
+                <p>{{ ranked_info.solo_tier }} : {{ ranked_info.solo_rank }}</p>
+            </div>
+        {% endif %}
+
     </div>
 
-    {% if summoner.is_in_game %}
+    {% if is_in_game %}
     <!-- Begin section where Live Game Data is Shown -->
     <div id="live_game_data">
 

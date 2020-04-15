@@ -1,22 +1,32 @@
 #basic-summoner-info {
     display: flex;
     justify-content: center;
-    width: 25%;
-    margin-left: 20%;
+    height: 250px;
+    width: 100%;
     margin-top: 3%;
+
+    /* Border of Container */
+    border: 5px solid black;
 }
 
-
 .div-text-next-to-image-right {
-    margin-top: 15%;
     margin-left: 10px;
-    align-content: center;
+    font-family: Rubik, serif;
+    font-size: 24pt;
+    padding-top: 50px;
 }
 
 .div-text-next-to-image-left {
     margin-top: 15%;
     margin-right: 10px;
     align-content: center;
+}
+
+.div-rank-emblem {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    margin-left: 15%;
+    text-align: center;
 }
 
 #live_game_data {
