@@ -4,7 +4,7 @@ import json
 
 def riot_API_summoner_info(name):
     url = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + name
-    args = {'api_key': 'RGAPI-d4965f87-1b14-418c-b4b7-a7fa5efdee95'}
+    args = {'api_key': 'INSERT API KEY HERE'}
     riot_api_summoner_GET = requests.get(url, params=args)
 
     return json.loads(riot_api_summoner_GET.content)
@@ -12,7 +12,7 @@ def riot_API_summoner_info(name):
 
 def riot_API_live_game(summoner_id):
     url = "https://na1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/" + str(summoner_id)
-    args = {'api_key': 'RGAPI-d4965f87-1b14-418c-b4b7-a7fa5efdee95'}
+    args = {'api_key': 'INSERT API KEY HERE'}
     riot_api_live_game_GET = requests.get(url, params=args)
 
     if riot_API_isInGame(riot_api_live_game_GET):
@@ -23,7 +23,7 @@ def riot_API_live_game(summoner_id):
 
 def riot_API_ranked_info(summoner_id):
     url = 'https://na1.api.riotgames.com/lol/league/v4/entries/by-summoner/' + str(summoner_id)
-    args = {'api_key': 'RGAPI-d4965f87-1b14-418c-b4b7-a7fa5efdee95'}
+    args = {'api_key': 'INSERT API KEY HERE'}
     riot_api_ranked_info_GET = requests.get(url, params=args)
 
     return format_ranked_info(json.loads(riot_api_ranked_info_GET.content))
